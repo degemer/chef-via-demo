@@ -11,8 +11,7 @@ end
 
 group 'via'
 
-users = ['degemer', 'serendip']
-users.each do |user_name|
+node['via']['users'].each do |user_name|
   user user_name do
     shell '/bin/zsh'
     group 'via'

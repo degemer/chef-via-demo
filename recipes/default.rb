@@ -22,7 +22,7 @@ node['via']['users'].each do |user_name|
     action :create
     user user_name
     group node['via']['group']
-    mode '600'
+    mode '700'
     recursive true
   end 
 end

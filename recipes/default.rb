@@ -17,3 +17,9 @@ node['via']['users'].each do |user_name|
     group 'via'
   end
 end
+
+group 'sudo' do
+  append true
+  members node['via']['users']
+end
+

@@ -15,6 +15,9 @@ describe 'chef-via-demo::default' do
 
     it 'converges successfully' do
       expect { chef_run }.to_not raise_error
+      expect(chef_run).to include_recipe('chef-via-demo::packages')
+      expect(chef_run).to include_recipe('chef-via-demo::users')
+      expect(chef_run).to include_recipe('chef-via-demo::welcome')
     end
   end
 end

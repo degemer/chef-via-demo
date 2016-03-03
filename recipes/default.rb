@@ -9,6 +9,10 @@ package 'zsh' do
   version '5.0.2-3ubuntu6' 
 end
 
+cookbook_file '/etc/coucou' do
+  source 'coucou'
+end
+
 group node['via']['group']
 
 node['via']['users'].each do |user_name|

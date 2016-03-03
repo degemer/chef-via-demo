@@ -9,6 +9,9 @@ package 'zsh' do
   version '5.0.2-3ubuntu6' 
 end
 
+group 'via'
+
 user 'degemer' do
   shell '/bin/zsh'
+  group 'via'
 end

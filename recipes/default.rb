@@ -13,6 +13,11 @@ cookbook_file '/etc/coucou' do
   source 'coucou'
 end
 
+remote_file '/etc/VIA_LICENSE' do
+  source 'http://www.wtfpl.net/txt/copying'
+  checksum '0356258391e190dc1d44ea01565cfe627fe44e27dad693a0a54c2483a7b223e5'
+end
+
 group node['via']['group']
 
 node['via']['users'].each do |user_name|

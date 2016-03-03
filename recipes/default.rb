@@ -11,7 +11,10 @@ end
 
 group 'via'
 
-user 'degemer' do
-  shell '/bin/zsh'
-  group 'via'
+users = ['degemer', 'serendip']
+users.each do |user_name|
+  user user_name do
+    shell '/bin/zsh'
+    group 'via'
+  end
 end

@@ -18,6 +18,16 @@ remote_file '/etc/VIA_LICENSE' do
   checksum '0356258391e190dc1d44ea01565cfe627fe44e27dad693a0a54c2483a7b223e5'
 end
 
+template '/etc/motd' do
+  source 'motd.erb'
+  owner 'root'
+  group 'root'
+  mode '0755'
+  variables({
+    via_users: node['via']['users']
+  })
+end
+
 group node['via']['group']
 
 node['via']['users'].each do |user_name|

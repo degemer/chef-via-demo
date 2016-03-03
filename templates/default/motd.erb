@@ -1,0 +1,6 @@
+This is the motd.
+
+Current VIA users of this node:
+<% @via_users.each do |user| %>
+<%= user %> <%= 'and he is awesome' if user == 'serendip' %>
+<% end %>
